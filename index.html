@@ -1,0 +1,106 @@
+<html>
+<head>
+  <meta http-Equiv="Cache-Control" Content="no-cache">
+  <meta http-Equiv="Pragma" Content="no-cache">
+  <meta http-Equiv="Expires" Content="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="Final.css">
+  <script src="MyJavaScript.js"></script>
+  
+</head>
+<body onload="start()">
+
+<ul class="A">
+  <li class="A"><a id="time" class="Atime" style="text-align:right; padding:2px 10px 0px 15px;font-size:20;"><br><a class="Adate" id="date" style="padding: 0px 10px 0px 15px; font-size: 17; font-weight:normal;"></a></a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn"><img class="A" name="icon" src="Theme1/gear.png"></a>
+    <div class="dropdown-content">
+      <a id="theme" class="Drop" onclick="toggleTheme()">Dark Theme</a>
+      <!--<a class="Drop" href="#">Link 2</a>
+      <a class="Drop" href="#">Link 3</a>-->
+    </div>
+  </li> <!--
+  <li class="A-img"><a class="A-img" href="#about"><img name="icon" class="A" src="Theme1/thermometer.png"></a></li>
+  <li class="A-img"><a class="A-img" href="#about"><img name="icon" class="A" src="Theme1/weather.png"></a></li> -->
+  <li class="A-img"><a class="A" name="A" id="Planf" onclick="Change(this.id)"><img name="icon" class="A" src="Theme1/fan-speed.png"></a></li>
+  <li class="A-img"><a class="A" name="A" id="Planl" onclick="Change(this.id)"><img name="icon" class="A" src="Theme1/light.png"></a></li>
+  <li class="A-img"><a class="active" name="A" id="Plan" onclick="Change(this.id)"><img name="icon" class="A" src="Theme1/floor-plan.png"></a></li>
+  <li class="AH1"><a class="AH1">HESTIA</a></li>
+  <li class="A" style="float:left; font-size: 28px; font-weight: bold;"><a class="AH2" style="padding-left: 10px; padding-top: 11px">Smart Home</a></li>
+</ul>
+
+
+<ul class="B">
+  <li class="B"><a class="active" id="Dash" onclick="On_Click(this.id)"><img name="icon" class="B" src="Theme1/chartW.png">Dashboard</a></li>
+  <li class="B"><a class="B" id="Living" onclick="On_Click(this.id)"><img name="icon" class="B" src="Theme1/sofa.png">Living Room</a></li>
+  <li class="B"><a class="B"id="Kitchen" onclick="On_Click(this.id)"><img name="icon" class="B" src="Theme1/cooker.png">Kitchen</a></li>
+  <li class="B"><a class="B" id="Bed" onclick="On_Click(this.id)"><img name="icon" class="B" src="Theme1/bed.png">Bedroom</a></li>
+  <li class="B"><a class="B" id="Mbed" onclick="On_Click(this.id)"><img name="icon" class="B" src="Theme1/bed.png">Master Bedroom</a></li>
+</ul>
+
+
+<ul class="C">  
+  <li class="C"><a class="active" id="Plan" onclick="Change(this.id)"><img name="icon" class="C" src="Theme1/speed.png">System</a></li></a></li>
+  <li class="C"><a class="C" id="Planl" onclick="Change(this.id)"><img name="icon" class="C" src="Theme1/light.png">Light</a></li></a></li>
+  <li class="C"><a class="C" id="Planf" onclick="Change(this.id)"><img name="icon" class="C" src="Theme1/fan-speed.png">Fan</a></li></a></li>
+  <!--<li class="C"><a class="C" id="" onclick="Change(this.id)"><img name="icon" class="C" src="Theme1/cc.png" style="width: 65%; height: auto;">Central A/C</a></li></a></li>
+  <li class="C"><a class="C" id="AUTO"><img name="icon" class="C" src="Theme1/a.png">Auto</a></li></a></li>-->
+  <li class="C"><a class="C" id="OFF" onclick="OFF()"><img name="icon" class="C" src="Theme1/shutdown.png">Off</a></li></a></li>
+</ul>
+
+
+<div class="Center">
+<iframe id="myFrame" class="Include" src="Plan.asp" scrolling="no"></iframe>
+<div class="Inner">
+<svg height="300" widt="auto">
+  <text class="SvgText1" id="Temperature" x="160" y="40"  text-anchor="middle" alignment-baseline="central" font-size="35">56</text>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop class="C1" offset="0%"/>
+      <stop class="C2" offset="100%"/>
+    </linearGradient>
+    <circle class="Cir1" cx="160" cy="180" r="90" stroke-width="15" fill="none" transform='rotate(225 160 180)'/>
+    <circle cx="160" cy="180" r="90" id="Sys" stroke="url(#gradient)" stroke-width="15" fill="none" transform='rotate(225 160 180)' stroke-dasharray="300,565.714"/>
+  <text class="SvgText" id="System" x="160" y="180"  text-anchor="middle" alignment-baseline="central" font-size="35">56%</text>
+</svg>
+</div>
+</div>
+
+
+<div class="Bottom">
+  <div class="inB">
+    Living Room
+    <svg height="300" width="auto">
+      <circle class="Cir2" cx="187" cy="110" r="85" stroke-width="30" fill="none" transform='rotate(180 187 110)' stroke-dasharray="267.143,534.286"/>
+      <circle class="Cir2up" id="SysL" cx="187" cy="110" r="85" stroke-width="30" fill="none" transform='rotate(180 187 110)' stroke-dasharray="133.5,534.286"/>
+      <text class="SvgText" id="SysLiving" x="187" y="100" text-anchor="middle" alignment-baseline="top" font-size="25">50W</text>
+      <text class="SvgTextSmall" x="100" y="122" text-anchor="middle" alignment-baseline="top">0 W</text>
+      <text class="SvgTextSmall" id="MaxL" x="274" y="122" text-anchor="middle" alignment-baseline="top">0</text>
+    </svg>
+  </div>
+  <div class="inB">
+    Bedrooms
+    <svg height="300" width="auto">
+      <circle class="Cir3" cx="187" cy="110" r="85" stroke-width="30" fill="none" transform='rotate(180 187 110)' stroke-dasharray="267.143,534.286"/>
+      <circle class="Cir3up" id="SysB" cx="187" cy="110" r="85" stroke-width="30" fill="none" transform='rotate(180 187 110)' stroke-dasharray="53.4286,534.286"/>
+      <text class="SvgText" id="SysBed" x="187" y="100" text-anchor="middle" alignment-baseline="top" font-size="25">20W</text>
+      <text class="SvgTextSmall" x="100" y="122" text-anchor="middle" alignment-baseline="top">0 W</text>
+      <text class="SvgTextSmall" id="MaxB" x="274" y="122" text-anchor="middle" alignment-baseline="top">0</text>
+    </svg>
+  </div>
+  <div class="inB">
+    Kitchen+Bath
+    <svg height="300" width="auto">
+      <circle class="Cir4" cx="187" cy="110" r="85" stroke-width="30" fill="none" transform='rotate(180 187 110)' stroke-dasharray="267.143,534.286"/>
+      <circle class="Cir4up" id="SysK" cx="187" cy="110" r="85" stroke-width="30" fill="none" transform='rotate(180 187 110)' stroke-dasharray="267.143,534.286"/>
+      <text class="SvgText" id="SysKitchen" x="187" y="100" text-anchor="middle" alignment-baseline="top" font-size="25">100W</text>
+      <text class="SvgTextSmall" x="100" y="122" text-anchor="middle" alignment-baseline="top">0 W</text>
+      <text class="SvgTextSmall" id="MaxK" x="274" y="122" text-anchor="middle" alignment-baseline="top">0 W</text>
+    </svg>
+  </div>
+</div>
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,45 @@
+<html>
+<head>
+    <script type="text/javascript">
+function Watts()
+{
+    var arr(4),arrL(4),arrF(4);
+    var adocon= new ActiveXObject("ADODB.Connection");
+    var adoRS = new ActiveXObject("ADODB.Recordset");
+    alert("Works");
+    adoConn.Open("Provider=Microsoft.Jet.OLEDB.4.0; Data Source='Current.mdb'");
+    adoRS.Open("Select * from Table1", adoConn, 1, 3);
+    if(adoRS.Fields("ID").value=="Living1" || adoRS.Fields("ID").value=="Living2")
+    {  
+        arr(0)=arr(0)+adoRS.Fields("TotalC").value;
+        arrL(0)=arrL(0)+adoRS.Fields("LightsC").value;
+        arrF(0)=arrF(0)+adoRS.Fields("FanC").value;
+    }
+    else
+    if(adoRS.Fields("ID").value=="Bed" || adoRS.Fields("ID").value=="Mbed")
+    {  
+        arr(1)=arr(1)+adoRS.Fields("TotalC").value;
+        arrL(1)=arrL(1)+adoRS.Fields("LightsC").value;
+        arrF(1)=arrF(1)+adoRS.Fields("FanC").value;
+    }
+    else
+    if(adoRS.Fields("ID").value=="Kitchen" || adoRS.Fields("ID").value=="Bath1" || adoRS.Fields("ID").value=="Bath2")
+    {  
+        arr(2)=arr(2)+adoRS.Fields("TotalC").value;
+        arrL(2)=arrL(2)+adoRS.Fields("LightsC").value;
+        arrF(2)=arrF(2)+adoRS.Fields("FanC").value;
+    }
+    else
+    {
+        arr(3)=arr(0)+arr(1)+arr(2);
+        arrL(3)=arrL(0)+arrL(1)+arrL(2);
+        arrF(3)=arrF(0)+arrF(1)+arrF(2); 
+    }
+    document.getElementById("System").innerHTML=arr(3);
+}
+</script>
+</head>
+<body>
+    <h1 id="System"></h1>
+</body>
+</html>
